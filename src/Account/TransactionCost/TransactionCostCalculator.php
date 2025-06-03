@@ -8,7 +8,7 @@ use App\SharedKernel\Money;
 
 class TransactionCostCalculator implements TransactionCostCalculatorInterface
 {
-    private const int PERCENTAGE_TRANSACTION_COST = 5;
+    private const float PERCENTAGE_TRANSACTION_COST = 0.5;
 
     public function calculate(Money $amount): Money
     {

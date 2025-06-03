@@ -40,12 +40,12 @@ class Account
         );
 
         $balance = $this->balanceManager->getBalanceForAccount($this->accountId);
-        
         if ($balance->value < $finalAmount->value) {
             throw new InsufficientFundsException('Insufficient funds');
         }
 
         $dailyLimit = $this->dailyLimitManager->provideDailyLimitForAccount($this->accountId);
+        
         if ($dailyLimit->isLimitReached()) {
             throw new DailyLimitReachedException('Daily limit reached');
         }
